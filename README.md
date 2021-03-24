@@ -6,9 +6,10 @@ and then shows those events, the date and hour details, and the total number of 
 all found events. 
 
 **Usage:**
-        1. Create a python virtual environment and pip install the requirements. 
+        ```1. Create a python virtual environment and pip install the requirements. 
         2. Set parameters specific to you in config.yaml:
             - timezone (UTC)
             - string to search for in your calendar event titles
             - Date ranges of interest (mine are pay periods)
         3. Run with "python3 main.py"
+        ```
