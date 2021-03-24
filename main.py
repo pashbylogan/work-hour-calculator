@@ -60,6 +60,11 @@ def main():
     creds = getCreds()
     service = build('calendar', 'v3', credentials=creds)
 
+    # Get the search substring for event titles
+    with open('config.yaml') as f:
+        data = yaml.load(f,Loader=yaml.FullLoader)
+        substring = data['searchString']
+
     # Takes input from user and tries to generate datetime objects
     startDate = None
     while (startDate == None):
@@ -82,7 +87,7 @@ def main():
         print('No upcoming events found.')
     week1Sum, week2Sum=0,0
     for event in events:
-        if 'tcc' in event['summary'].lower():
+        if substring in event['summary'].lower():
             # Print the name, date, and time bounds of event
             print('{:<8}\n\t{:<8}\n\t{:<8} {:<8}'.format(event['summary'],
                     event['start'].get('dateTime').split("T")[0][5:],
