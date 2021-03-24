@@ -5,7 +5,7 @@ This uses the Google Calendar API to search for events with a name (specified in
 and then shows those events, the date and hour details, and the total number of hours across
 all found events. 
 
-**Usage:
+**Usage:**
     Create a python virtual environment and pip install the requirements. 
     Set parameters specific to you in config.yaml:
         - timezone (UTC)
